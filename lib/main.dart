@@ -262,14 +262,14 @@ final List<Dish> allDishes = [
     name: 'Salade César',
     description: 'Laitue romaine, parmesan, croûtons et sauce César maison',
     price: 8.50,
-    imageUrl: 'assets/images/caesar_salad.jpg',
+    imageUrl: 'assets/images/entrees/caesar_salad.jpg',
     category: 'Entrées',
   ),
   Dish(
     name: 'Soupe à l\'oignon',
     description: 'Soupe à l\'oignon gratinée au fromage, servie avec croûtons',
     price: 7.50,
-    imageUrl: 'assets/images/onion_soup.jpg',
+    imageUrl: 'assets/images/entrees/onion_soup.jpg',
     category: 'Entrées',
   ),
   Dish(
@@ -283,35 +283,35 @@ final List<Dish> allDishes = [
     name: 'Bruschetta tomates basilic',
     description: 'Pain grillé à l\'ail avec tomates fraîches, basilic et huile d\'olive extra vierge',
     price: 6.50,
-    imageUrl: 'assets/images/beef_carpaccio.jpg', // Utilisation de la même image
+    imageUrl: 'assets/images/bruschetta.jpg', // Utilisation de la même image
     category: 'Entrées',
   ),
   Dish(
     name: 'Foie gras maison',
     description: 'Foie gras mi-cuit, chutney de figues et pain brioché toasté',
     price: 14.50,
-    imageUrl: 'assets/images/caesar_salad.jpg', // Utilisation de la même image
+    imageUrl: 'assets/images/foie-gras-maison.jpg', // Utilisation de la même image
     category: 'Entrées',
   ),
   Dish(
     name: 'Burrata crémeuse',
     description: 'Burrata, tomates cerises, pesto maison et pignons torréfiés',
     price: 9.80,
-    imageUrl: 'assets/images/onion_soup.jpg', // Utilisation de la même image
+    imageUrl: 'assets/images/burrata.jpg', // Utilisation de la même image
     category: 'Entrées',
   ),
   Dish(
     name: 'Tartare de saumon',
     description: 'Saumon frais, avocat, mangue et vinaigrette citronnée',
     price: 11.00,
-    imageUrl: 'assets/images/beef_carpaccio.jpg', // Utilisation de la même image
+    imageUrl: 'assets/images/tartare-de-saumon.jpg', // Utilisation de la même image
     category: 'Entrées',
   ),
   Dish(
     name: 'Velouté de potimarron',
     description: 'Crème de potimarron à la muscade avec chips de pancetta et crème fraîche',
     price: 7.00,
-    imageUrl: 'assets/images/onion_soup.jpg', // Utilisation de la même image
+    imageUrl: 'assets/images/veloute-potimarron.jpg', // Utilisation de la même image
     category: 'Entrées',
   ),
 

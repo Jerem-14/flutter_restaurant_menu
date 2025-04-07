@@ -159,18 +159,25 @@ class DishCard extends StatelessWidget {
             // Image du plat (simulée avec un container coloré)
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
-              child: Container(
+              child: SizedBox(
                 width: 100,
                 height: 100,
-                color: Colors.grey.shade300,
-                child: Center(
-                  // Normalement ici on utiliserait Image.asset avec le chemin de l'image
-                  // Mais pour simplifier l'exemple, on utilise une icône
-                  child: Icon(
-                    _getIconForCategory(dish.category),
-                    size: 50,
-                    color: Colors.grey.shade700,
-                  ),
+                child: Image.asset(
+                  dish.imageUrl,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    // Afficher une icône en cas d'erreur de chargement d'image
+                    return Container(
+                      color: Colors.grey.shade300,
+                      child: Center(
+                        child: Icon(
+                          _getIconForCategory(dish.category),
+                          size: 50,
+                          color: Colors.grey.shade700,
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -272,6 +279,41 @@ final List<Dish> allDishes = [
     imageUrl: 'assets/images/beef_carpaccio.jpg',
     category: 'Entrées',
   ),
+  Dish(
+    name: 'Bruschetta tomates basilic',
+    description: 'Pain grillé à l\'ail avec tomates fraîches, basilic et huile d\'olive extra vierge',
+    price: 6.50,
+    imageUrl: 'assets/images/beef_carpaccio.jpg', // Utilisation de la même image
+    category: 'Entrées',
+  ),
+  Dish(
+    name: 'Foie gras maison',
+    description: 'Foie gras mi-cuit, chutney de figues et pain brioché toasté',
+    price: 14.50,
+    imageUrl: 'assets/images/caesar_salad.jpg', // Utilisation de la même image
+    category: 'Entrées',
+  ),
+  Dish(
+    name: 'Burrata crémeuse',
+    description: 'Burrata, tomates cerises, pesto maison et pignons torréfiés',
+    price: 9.80,
+    imageUrl: 'assets/images/onion_soup.jpg', // Utilisation de la même image
+    category: 'Entrées',
+  ),
+  Dish(
+    name: 'Tartare de saumon',
+    description: 'Saumon frais, avocat, mangue et vinaigrette citronnée',
+    price: 11.00,
+    imageUrl: 'assets/images/beef_carpaccio.jpg', // Utilisation de la même image
+    category: 'Entrées',
+  ),
+  Dish(
+    name: 'Velouté de potimarron',
+    description: 'Crème de potimarron à la muscade avec chips de pancetta et crème fraîche',
+    price: 7.00,
+    imageUrl: 'assets/images/onion_soup.jpg', // Utilisation de la même image
+    category: 'Entrées',
+  ),
 
   // Plats
   Dish(
@@ -295,6 +337,48 @@ final List<Dish> allDishes = [
     imageUrl: 'assets/images/salmon.jpg',
     category: 'Plats',
   ),
+  Dish(
+    name: 'Magret de canard',
+    description: 'Magret de canard rôti, sauce aux fruits rouges et pommes de terre sarladaises',
+    price: 22.50,
+    imageUrl: 'assets/images/steak_frites.jpg', // Utilisation de la même image
+    category: 'Plats',
+  ),
+  Dish(
+    name: 'Tajine d\'agneau',
+    description: 'Épaule d\'agneau mijotée, légumes confits, abricots et amandes, semoule aux épices',
+    price: 20.00,
+    imageUrl: 'assets/images/mushroom_risotto.jpg', // Utilisation de la même image
+    category: 'Plats',
+  ),
+  Dish(
+    name: 'Linguine aux fruits de mer',
+    description: 'Pâtes fraîches, crevettes, moules, calamars et sauce tomate légèrement relevée',
+    price: 17.50,
+    imageUrl: 'assets/images/salmon.jpg', // Utilisation de la même image
+    category: 'Plats',
+  ),
+  Dish(
+    name: 'Suprême de volaille',
+    description: 'Poulet fermier rôti, jus corsé, écrasé de pommes de terre à l\'huile d\'olive et herbes fraîches',
+    price: 16.50,
+    imageUrl: 'assets/images/steak_frites.jpg', // Utilisation de la même image
+    category: 'Plats',
+  ),
+  Dish(
+    name: 'Burger gourmet',
+    description: 'Pain artisanal, steak haché de boeuf, comté affiné, bacon croustillant, oignons caramélisés et frites maison',
+    price: 17.00,
+    imageUrl: 'assets/images/mushroom_risotto.jpg', // Utilisation de la même image
+    category: 'Plats',
+  ),
+  Dish(
+    name: 'Curry de légumes',
+    description: 'Légumes de saison, lait de coco, curry maison et riz basmati (option végétarienne)',
+    price: 14.50,
+    imageUrl: 'assets/images/salmon.jpg', // Utilisation de la même image
+    category: 'Plats',
+  ),
 
   // Desserts
   Dish(
@@ -316,6 +400,48 @@ final List<Dish> allDishes = [
     description: 'Gâteau au chocolat coulant servi avec glace vanille et coulis de fruits rouges',
     price: 8.00,
     imageUrl: 'assets/images/chocolate_fondant.jpg',
+    category: 'Desserts',
+  ),
+  Dish(
+    name: 'Tiramisu',
+    description: 'Biscuits café, mascarpone et cacao amer',
+    price: 7.50,
+    imageUrl: 'assets/images/creme_brulee.jpg', // Utilisation de la même image
+    category: 'Desserts',
+  ),
+  Dish(
+    name: 'Profiteroles',
+    description: 'Choux croustillants, glace vanille et sauce chocolat chaud',
+    price: 8.50,
+    imageUrl: 'assets/images/chocolate_fondant.jpg', // Utilisation de la même image
+    category: 'Desserts',
+  ),
+  Dish(
+    name: 'Mousse aux fruits rouges',
+    description: 'Mousse légère aux fruits rouges, coulis et fruits frais',
+    price: 7.00,
+    imageUrl: 'assets/images/lemon_pie.jpg', // Utilisation de la même image
+    category: 'Desserts',
+  ),
+  Dish(
+    name: 'Carpaccio d\'ananas',
+    description: 'Fines tranches d\'ananas, sirop au rhum et sorbet citron vert',
+    price: 6.50,
+    imageUrl: 'assets/images/creme_brulee.jpg', // Utilisation de la même image
+    category: 'Desserts',
+  ),
+  Dish(
+    name: 'Café gourmand',
+    description: 'Expresso servi avec une sélection de mignardises',
+    price: 8.50,
+    imageUrl: 'assets/images/chocolate_fondant.jpg', // Utilisation de la même image
+    category: 'Desserts',
+  ),
+  Dish(
+    name: 'Pavlova aux fruits exotiques',
+    description: 'Meringue craquante, crème fouettée et fruits exotiques',
+    price: 7.80,
+    imageUrl: 'assets/images/lemon_pie.jpg', // Utilisation de la même image
     category: 'Desserts',
   ),
 ];
